@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace UtilExpress
 {
-    public class MaskV4Info : IComparable
+    public class MaskV4Info : IComparable, IComparable<MaskV4Info>
     {
         #region variables
         //private static readonly ImmutableArray<byte> _valid_mask = ImmutableArray.Create(new byte[]{255, 254, 252, 248, 240, 224, 192, 128});
@@ -33,8 +33,7 @@ namespace UtilExpress
 
         public byte[] Bytes
         {
-            get
-            {
+            get {
                 // returns a copy of the array instead,
                 // so that the elements of the actual one cannot be modified from outside the object
                 return (byte[])_bytes.Clone();
@@ -170,6 +169,14 @@ namespace UtilExpress
 
             if (!(obj is MaskV4Info other))
                 throw new ArgumentException("Object is not MaskV4Info");
+            else
+                return CompareTo(other);
+        }
+
+        public int CompareTo(MaskV4Info other)
+        {
+            if (other == null)
+                return 1;
 
             int i = 0;
             do{

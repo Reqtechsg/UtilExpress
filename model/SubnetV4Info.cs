@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace UtilExpress
 {
-    public class SubnetV4Info
+    public class SubnetV4Info : IComparable, IComparable<SubnetV4Info>
     {
         #region variables
 
@@ -151,6 +152,38 @@ namespace UtilExpress
         public override string ToString()
         {
             return CIDR;
+        }
+
+        public int CompareTo(object obj)
+        {
+            if(obj == null)
+                return 1;
+
+            if (!(obj is SubnetV4Info other))
+                throw new ArgumentException("Object is not SubnetV4Info");
+            else
+                return CompareTo(other);
+        }
+
+        public int CompareTo(SubnetV4Info other)
+        {
+            if (other == null)
+                return 1;
+
+            for(int i = 0 ; i < 4 ; i++)
+            {
+                var my_byte    = _network_address.Bytes[i];
+                var other_byte = other._network_address.Bytes[i];
+                var result     = my_byte.CompareTo(other_byte);
+
+                if(result != 0)
+                    return result;
+            }
+
+            var my_prefix_length = _network_address.PrefixLength;
+            var other_prefix_length = other._network_address.PrefixLength;
+
+            return my_prefix_length.CompareTo(other_prefix_length);
         }
 
         public static SubnetV4Info Parse(string cidr)

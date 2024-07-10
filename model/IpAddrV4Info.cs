@@ -253,15 +253,15 @@ namespace UtilExpress
             var nid  = NetworkId.Bytes;
             var hid  = HostId.Bytes;
 
-            string ip_ddn   = string.Format("IP Address  : {0,3}.{1,3}.{2,3}.{3,3}",   ip[0],   ip[1],   ip[2],   ip[3]);
-            string mask_ddn = string.Format("Subnet Mask : {0,3}.{1,3}.{2,3}.{3,3}", mask[0], mask[1], mask[2], mask[3]);
-            string nid_ddn  = string.Format("Network ID  : {0,3}.{1,3}.{2,3}.{3,3}",  nid[0],  nid[1],  nid[2],  nid[3]);
-            string hid_ddn  = string.Format("Host ID     : {0,3}.{1,3}.{2,3}.{3,3}",  hid[0],  hid[1],  hid[2],  hid[3]);
+            var ip_ddn   = string.Format("IP Address  : {0,3}.{1,3}.{2,3}.{3,3}",   ip[0],   ip[1],   ip[2],   ip[3]);
+            var mask_ddn = string.Format("Subnet Mask : {0,3}.{1,3}.{2,3}.{3,3}", mask[0], mask[1], mask[2], mask[3]);
+            var nid_ddn  = string.Format("Network ID  : {0,3}.{1,3}.{2,3}.{3,3}",  nid[0],  nid[1],  nid[2],  nid[3]);
+            var hid_ddn  = string.Format("Host ID     : {0,3}.{1,3}.{2,3}.{3,3}",  hid[0],  hid[1],  hid[2],  hid[3]);
 
-            string line1 = ip_ddn   + "  [ " + ip_emphasized   + " ]";
-            string line2 = mask_ddn + "  [ " + mask_emphasized + " ]";
-            string line3 = nid_ddn  + "  [ " + nid_emphasized  + " ]";
-            string line4 = hid_ddn  + "  [ " + hid_emphasized  + " ]";
+            var line1 = ip_ddn   + "  [ " + ip_emphasized   + " ]";
+            var line2 = mask_ddn + "  [ " + mask_emphasized + " ]";
+            var line3 = nid_ddn  + "  [ " + nid_emphasized  + " ]";
+            var line4 = hid_ddn  + "  [ " + hid_emphasized  + " ]";
 
             Console.WriteLine();
             Console.WriteLine(line1);
