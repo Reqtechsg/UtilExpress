@@ -77,7 +77,7 @@ namespace UtilExpress
                 }
 
                 // save network size
-                var inverted_mask_value = ~_mask_value & 0xff_ff_ff_ff;
+                var inverted_mask_value = ~_mask_value & 0xffffffff;
                 var subnet_size_value  = (ulong)inverted_mask_value + 1;
                 _network_size          = new ULongInfo(subnet_size_value);
             }
