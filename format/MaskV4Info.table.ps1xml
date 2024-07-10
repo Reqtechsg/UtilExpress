@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <ViewDefinitions>
+    <View>
+      <Name>MaskV4Info</Name>
+      <ViewSelectedBy>
+        <TypeName>UtilExpress.MaskV4Info</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>PrefixLength</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Mask</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Bits</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>NetworkSize</Label>
+            <Alignment>Right</Alignment>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>PrefixLength</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Mask</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Bits</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>NetworkSize</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+  </ViewDefinitions>
+</Configuration>
