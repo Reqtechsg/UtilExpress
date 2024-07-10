@@ -22,8 +22,7 @@ namespace UtilExpress
 
         public string CIDR
         {
-            get
-            {
+            get {
                 var prefix = _network_address.ToString();
                 var suffix = _network_address.PrefixLength;
                 return $"{prefix}/{suffix}";
@@ -37,8 +36,7 @@ namespace UtilExpress
 
         public IpAddrV4Info LastIP
         {
-            get
-            {
+            get {
                 var subnet_mask_value = _network_address.SubnetMask.MaskValue;
                 var host_mask_value   = ~subnet_mask_value;
                 var last_ip_value     = _network_address.IpValue | host_mask_value;
