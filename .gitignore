@@ -1,3 +1,4 @@
 bin/
 obj/
 _install.ps1
+.DS_Store
